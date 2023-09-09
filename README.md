@@ -129,8 +129,6 @@ PREDICTED - – Et ainsi , dit Elizabeth avec un peu d ’ impatience , se termi
 =============================================================
 ```
 
-```
-
 Prediction logs may be found [here](predictions.log)
 
 
