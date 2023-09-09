@@ -65,15 +65,16 @@ Instead of updating the model weights after every mini-batch, gradients are accu
 
 This is a learning rate scheduling technique. The learning rate starts from a low value, increases gradually to a maximum, and then decreases. This policy can help in faster convergence and better performance.
 
-![image](https://github.com/Delve-ERAV1/S15/assets/11761529/6dacd615-4477-4ce5-8c2d-d16f96832a6a)
-
-
 ![image](https://github.com/Delve-ERAV1/S15/assets/11761529/72650458-8ca1-45f9-adf5-7d0a18f0997c)
 
 - **Benefits**:
   - Faster convergence.
   - Can prevent overshooting during training.
   - Helps in achieving better performance.
+
+##### LR Finder
+![image](https://github.com/Delve-ERAV1/S15/assets/11761529/6dacd615-4477-4ce5-8c2d-d16f96832a6a)
+
 
 ### 5. Dynamic Padding
 
@@ -88,7 +89,7 @@ Instead of padding all sequences in a batch to the maximum sequence length, dyna
 ## Training
 
 ```
-Epoch 28:  44%|████▎     | 169/388 [00:26<00:34,  6.40it/s, v_num=14, train_loss_step=1.730, train_loss_epoch=1.780, validation_cer=0.043, validation_wer=0.421]
+Epoch 39: 100%|██████████| 848/848 [01:24<00:00, 10.03it/s, v_num=3, train_loss_step=1.680, train_loss_epoch=1.670, validation_cer=0.132, validation_wer=0.343]
 ```
 
 Training logs may be found [here](training_logs.txt)
@@ -99,38 +100,23 @@ Training logs may be found [here](training_logs.txt)
 
 ```
 =============================================================
-
-SOURCE - The scholar finally reached the balcony of the gallery, and climbed over it nimbly, to the applause of the whole vagabond tribe.
-
-TARGET - L’écolier toucha enfin au balcon de la galerie, et l’enjamba assez lestement aux applaudissements de toute la truanderie.
-
-PREDICTED - L ’ écolier toucha enfin au balcon de la galerie , et l ’ on la touchait presque tout entière à la tribu des applaudissements .
-
+SOURCE - Fear of seeing this unheard-of happiness, to which he clung so closely, soon vanish from between his hands?
+TARGET - Peur de voir s’évanouir bientôt entre ses mains ce bonheur inouï qu’il tenait si serré ?
+PREDICTED - Peur de voir s ’ évanouir bientôt entre ses mains ce bonheur inouï qu ’ il tenait si serré ?
 =============================================================
-
-SOURCE - The weather was magnificent.
-
-TARGET - Le temps était magnifique.
-
-PREDICTED - Le temps était magnifique .
-
+SOURCE - It is to the profits that he has made from his great nail factory that the Mayor of Verrieres is indebted for this fine freestone house which he has just finished building.
+TARGET - C’est aux bénéfices qu’il a faits sur sa grande fabrique de clous que le maire de Verrières doit cette belle habitation en pierres de taille qu’il achève en ce moment.
+PREDICTED - C ’ est aux bénéfices qu ’ il a fait à sa grande fabrique de clous que le maire de Verrières est cet édifice de belle habitation qu ’ il vient d ’ avoir chaud .
 =============================================================
-
-SOURCE - Despite the distance, despite the noise of wind and sea, we could distinctly hear the fearsome thrashings of the animal's tail, and even its panting breath.
-
-TARGET - Malgré la distance, malgré le bruit du vent et de la mer, on entendait distinctement les formidables battements de queue de l'animal et jusqu'à sa respiration haletante.
-
-PREDICTED - Malgré la distance , malgré le bruit du vent et de la mer , on entendait distinctement les formidables battements de queue de l ' animal et jusqu ' à sa respiration haletante .
-
+SOURCE - I was careful not to refer to Marguerite, fearing lest the name should awaken sad recollections hidden under the apparent calm of the invalid; but Armand, on the contrary, seemed to delight in speaking of her, not as formerly, with tears in his eyes, but with a sweet smile which reassured me as to the state of his mind.
+TARGET - Je me gardais bien de l'entretenir de Marguerite, craignant toujours que ce nom ne réveillât un triste souvenir endormi sous le calme apparent du malade; mais Armand, au contraire, semblait prendre plaisir à parler d'elle, non plus comme autrefois, avec des larmes dans les yeux, mais avec un doux sourire qui me rassurait sur l'état de son âme.
+PREDICTED - Je me gardais bien de l ' entretenir de Marguerite , craignant toujours que ce nom ne un triste souvenir endormi sous le calme apparent du malade ; mais Armand , au contraire , semblait prendre plaisir à parler d ' elle , non plus comme autrefois , avec des larmes dans les yeux , mais avec un doux sourire qui me rassurait sur l ' état de son âme .
 =============================================================
-
-SOURCE - "Then, besides that," continued Prudence; "admit that Marguerite loves you enough to give up the count or the duke, in case one of them were to discover your liaison and to tell her to choose between him and you, the sacrifice that she would make for you would be enormous, you can not deny it.
-
-TARGET - Puis, outre cela, admettons, continua Prudence, que Marguerite vous aime assez pour renoncer au comte et au duc, dans le cas où celui-ci s'apercervrait de votre liaison et lui dirait de choisir entre vous et lui, le sacrifice qu'elle vous ferait serait énorme, c'est incontestable.
-
-PREDICTED - -- Alors , ce qui vous aime , reprit Prudence , que Marguerite vous aime assez de renoncer au comte ou d ' un de la permission d ' entre vous et vous les lui direz à celle - ci , et vous dans le cas où elle ne pas au comte , vous !
-
+SOURCE - "And so ended his affection," said Elizabeth impatiently.
+TARGET - – Et ainsi, dit Elizabeth avec un peu d’impatience, se termina cette grande passion.
+PREDICTED - – Et ainsi , dit Elizabeth avec un peu d ’ impatience , se termina cette grande passion .
 =============================================================
+```
 
 ```
 
