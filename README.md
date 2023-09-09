@@ -21,13 +21,13 @@ The core of our translation task will be the Encoder-Decoder Transformer. This a
 ```
   | Name    | Type             | Params
 ---------------------------------------------
-0 | model   | Transformer      | 53.5 M
+0 | model   | Transformer      | 49.8 M
 1 | loss_fn | CrossEntropyLoss | 0     
 ---------------------------------------------
-53.5 M    Trainable params
+49.8 M    Trainable params
 0         Non-trainable params
-53.5 M    Total params
-213.821   Total estimated model params size (MB)
+49.8 M    Total params
+199.130   Total estimated model params size (MB)
 ```
 
 ## Techniques Incorporated
@@ -42,6 +42,13 @@ Parameter sharing involves sharing parameters between the encoder and decoder or
   - Reduces memory consumption.
   - Can lead to faster convergence.
   - Potentially improves model generalization.
+ 
+  ```python
+      # Parameter Sharing CYCLE(REV)
+    param_share_idx = list(range(new_N)) + list(range(new_N-1, -1, -1))
+    encoder_blocks_pm = [encoder_blocks[idx] for idx in param_share_idx]
+    decoder_blocks_pm = [decoder_blocks[idx] for idx in param_share_idx]
+  ```
 
 ### 2. Multi Query Attention
 
@@ -56,6 +63,10 @@ Instead of having a single set of queries in the attention mechanism, multi-quer
 
 Instead of updating the model weights after every mini-batch, gradients are accumulated over multiple mini-batches and then used to update the model. This can be especially useful when working with limited GPU memory, allowing for effectively larger batch sizes.
 ![image](https://github.com/Delve-ERAV1/S15/assets/11761529/934214d6-ed2f-4d91-8c52-a4da0dadf8a8)
+
+```python
+trainer = Trainer(accumulate_grad_batches=5)
+```
 
 - **Benefits**:
   - Allows for larger effective batch sizes.
