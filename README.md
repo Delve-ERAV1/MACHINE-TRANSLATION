@@ -65,6 +65,9 @@ Instead of updating the model weights after every mini-batch, gradients are accu
 
 This is a learning rate scheduling technique. The learning rate starts from a low value, increases gradually to a maximum, and then decreases. This policy can help in faster convergence and better performance.
 
+![image](https://github.com/Delve-ERAV1/S15/assets/11761529/6dacd615-4477-4ce5-8c2d-d16f96832a6a)
+
+
 ![image](https://github.com/Delve-ERAV1/S15/assets/11761529/72650458-8ca1-45f9-adf5-7d0a18f0997c)
 
 - **Benefits**:
@@ -119,6 +122,15 @@ TARGET - Malgré la distance, malgré le bruit du vent et de la mer, on entendai
 
 PREDICTED - Malgré la distance , malgré le bruit du vent et de la mer , on entendait distinctement les formidables battements de queue de l ' animal et jusqu ' à sa respiration haletante .
 
+=============================================================
+
+SOURCE - "Then, besides that," continued Prudence; "admit that Marguerite loves you enough to give up the count or the duke, in case one of them were to discover your liaison and to tell her to choose between him and you, the sacrifice that she would make for you would be enormous, you can not deny it.
+
+TARGET - Puis, outre cela, admettons, continua Prudence, que Marguerite vous aime assez pour renoncer au comte et au duc, dans le cas où celui-ci s'apercervrait de votre liaison et lui dirait de choisir entre vous et lui, le sacrifice qu'elle vous ferait serait énorme, c'est incontestable.
+
+PREDICTED - -- Alors , ce qui vous aime , reprit Prudence , que Marguerite vous aime assez de renoncer au comte ou d ' un de la permission d ' entre vous et vous les lui direz à celle - ci , et vous dans le cas où elle ne pas au comte , vous !
+
+=============================================================
 
 ```
 
