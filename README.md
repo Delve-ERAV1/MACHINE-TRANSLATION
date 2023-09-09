@@ -1,5 +1,3 @@
-# S15
-
 
 # Encoder-Decoder Transformer for English to French Translation
 
@@ -19,6 +17,18 @@ This documentation provides a guideline for implementing an encoder-decoder tran
 ### Encoder-Decoder Transformer
 
 The core of our translation task will be the Encoder-Decoder Transformer. This architecture has proven to be highly effective for sequence-to-sequence tasks, especially translation.
+
+```
+  | Name    | Type             | Params
+---------------------------------------------
+0 | model   | Transformer      | 53.5 M
+1 | loss_fn | CrossEntropyLoss | 0     
+---------------------------------------------
+53.5 M    Trainable params
+0         Non-trainable params
+53.5 M    Total params
+213.821   Total estimated model params size (MB)
+```
 
 ## Techniques Incorporated
 
@@ -74,15 +84,45 @@ Instead of padding all sequences in a batch to the maximum sequence length, dyna
 
 ## Training
 
-- **Framework**: PyTorch
-- **Objective**: Aim to achieve a loss under 1.8.
+```
+Epoch 28:  44%|████▎     | 169/388 [00:26<00:34,  6.40it/s, v_num=14, train_loss_step=1.730, train_loss_epoch=1.780, validation_cer=0.043, validation_wer=0.421]
+```
+
+Training logs may be found [here](training_logs.txt)
 
 
 
 ## Results
 
+```
+=============================================================
+
+SOURCE - The scholar finally reached the balcony of the gallery, and climbed over it nimbly, to the applause of the whole vagabond tribe.
+
+TARGET - L’écolier toucha enfin au balcon de la galerie, et l’enjamba assez lestement aux applaudissements de toute la truanderie.
+
+PREDICTED - L ’ écolier toucha enfin au balcon de la galerie , et l ’ on la touchait presque tout entière à la tribu des applaudissements .
+
+=============================================================
+
+SOURCE - The weather was magnificent.
+
+TARGET - Le temps était magnifique.
+
+PREDICTED - Le temps était magnifique .
+
+=============================================================
+
+SOURCE - Despite the distance, despite the noise of wind and sea, we could distinctly hear the fearsome thrashings of the animal's tail, and even its panting breath.
+
+TARGET - Malgré la distance, malgré le bruit du vent et de la mer, on entendait distinctement les formidables battements de queue de l'animal et jusqu'à sa respiration haletante.
+
+PREDICTED - Malgré la distance , malgré le bruit du vent et de la mer , on entendait distinctement les formidables battements de queue de l ' animal et jusqu ' à sa respiration haletante .
 
 
+```
 
-![image](https://github.com/Delve-ERAV1/S15/assets/11761529/934214d6-ed2f-4d91-8c52-a4da0dadf8a8)
+Prediction logs may be found [here](predictions.log)
+
+
 
